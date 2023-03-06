@@ -5,31 +5,32 @@ import react from '@vitejs/plugin-react';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  cacheDir: '../../node_modules/.vite/first-app',
+  cacheDir: '../../node_modules/.vite/second-app',
 
   server: {
-    port: 4201,
+    port: 4202,
     host: 'localhost',
   },
 
   preview: {
-    port: 4301,
+    port: 4302,
     host: 'localhost',
     strictPort: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
   },
+
   plugins: [
     react(),
     viteTsConfigPaths({
       root: '../../',
     }),
     federation({
-      name: 'first-app',
+      name: 'second-app',
       filename: 'remoteEntry.js',
       exposes: {
-        './Home': './apps/first-app/src/views/Home.tsx',
+        './Home': './apps/second-app/src/views/Home.tsx',
       },
       shared: ['react', 'react-dom', 'react-is'],
     }),

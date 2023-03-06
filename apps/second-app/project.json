@@ -1,7 +1,7 @@
 {
-  "name": "first-app",
+  "name": "second-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/first-app/src",
+  "sourceRoot": "apps/second-app/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/first-app"
+        "outputPath": "dist/apps/second-app"
       },
       "configurations": {
         "development": {
@@ -24,15 +24,15 @@
       "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "first-app:build"
+        "buildTarget": "second-app:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "first-app:build:development",
+          "buildTarget": "second-app:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "first-app:build:production",
+          "buildTarget": "second-app:build:production",
           "hmr": false
         }
       }
@@ -41,30 +41,30 @@
       "executor": "@nrwl/vite:preview-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "first-app:build"
+        "buildTarget": "second-app:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "first-app:build:development"
+          "buildTarget": "second-app:build:development"
         },
         "production": {
-          "buildTarget": "first-app:build:production"
+          "buildTarget": "second-app:build:production"
         }
       }
     },
     "test": {
       "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/apps/first-app"],
+      "outputs": ["coverage/apps/second-app"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/first-app"
+        "reportsDirectory": "../../coverage/apps/second-app"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/first-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/second-app/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },

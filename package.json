@@ -2,7 +2,10 @@
   "name": "federate-apps",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "fapp:preview": "nx run first-app:preview",
+    "sapp:preview": "nx run second-app:preview"
+  },
   "private": true,
   "dependencies": {
     "react": "18.2.0",
@@ -19,6 +22,7 @@
     "@nrwl/react": "15.8.5",
     "@nrwl/vite": "15.8.5",
     "@nrwl/workspace": "15.8.5",
+    "@originjs/vite-plugin-federation": "^1.2.1",
     "@testing-library/react": "14.0.0",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
